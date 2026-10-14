@@ -1,0 +1,15 @@
+# Values for docker compose interpolation (the ${...} in the compose files).
+# Nothing from this file is passed into the container.
+
+# Host name under which the proxy routes to this service.
+IFDD_SCHEMA_HOST={{ cookiecutter.ifdd_schema_host }}
+
+# Directory to serve, usually inside a separate clone of the content
+# repository. Absolute, or relative to this directory and starting with ./ or
+# ../ (without that prefix compose reads the value as a volume name and
+# refuses to start).
+# Required in production; development falls back to ./examples/json-ld.
+IFDD_SCHEMA_CONTENT_DIR={{ cookiecutter.ifdd_schema_content_dir }}
+
+# Port on 127.0.0.1 for local development.
+IFDD_SCHEMA_DEV_PORT={{ cookiecutter.ifdd_schema_dev_port }}

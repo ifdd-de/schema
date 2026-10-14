@@ -1,0 +1,9 @@
+# Local configuration, created from dotenv.dist
+.env
+
+.idea/
+__pycache__/
+.pytest_cache/
+
+# Local builds of the documentation (docs/en, docs/de)
+docs/_build/

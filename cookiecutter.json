@@ -1,0 +1,18 @@
+{
+  "ifdd_schema_prj_name": "IFDD Schema",
+  "ifdd_schema_prj_slug": "{{ cookiecutter.ifdd_schema_prj_name|lower|replace(' ', '_') }}",
+  "ifdd_schema_host": "schema",
+  "ifdd_schema_dev_port": "8081",
+  "ifdd_schema_autoindex": "y",
+  "ifdd_schema_cors_origin": "*",
+  "ifdd_schema_cache_max_age": "300",
+  "ifdd_schema_memory_limit": "128M",
+  "ifdd_schema_content_dir": "./examples/json-ld",
+  "ifdd_type_url": "http://type/v1",
+  "ifdd_nginx_image": "nginxinc/nginx-unprivileged:1.30.5-alpine-slim",
+  "ifdd_proxy_network": "proxy-net",
+  "_copy_without_render": [
+    ".github",
+    "tests"
+  ]
+}

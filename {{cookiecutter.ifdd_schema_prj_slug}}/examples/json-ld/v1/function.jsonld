@@ -1,0 +1,88 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "function": "{{cookiecutter.ifdd_type_url}}/function/",
+    "schema": "http://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "type": "@type",
+    "schemaVersion": "function:schemaVersion",
+    "c_created": {
+      "@id": "function:c_created",
+      "@type": "xsd:dateTime"
+    },
+    "c_modified": {
+      "@id": "function:c_modified",
+      "@type": "xsd:dateTime"
+    },
+    "c_cacheCreated": {
+      "@id": "function:c_cacheCreated",
+      "@type": "xsd:dateTime"
+    },
+    "c_cacheUpdated": {
+      "@id": "function:c_cacheUpdated",
+      "@type": "xsd:dateTime"
+    },
+    "c_validNotBefore": {
+      "@id": "function:c_validNotBefore",
+      "@type": "xsd:dateTime"
+    },
+    "c_validNotAfter": {
+      "@id": "function:c_validNotAfter",
+      "@type": "xsd:dateTime"
+    },
+    "objType": "function:objType",
+    "objScope": "function:objScope",
+    "objName": "function:objName",
+    "description": "function:description",
+    "risk_class": "function:risk_class",
+    "consumer": {
+      "@id": "function:consumer",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "isPartOf": {
+      "@id": "function:isPartOf",
+      "@type": "@id"
+    },
+    "hasPart": {
+      "@id": "function:hasPart",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "providesFunction": {
+      "@id": "function:providesFunction",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "implementedBy": {
+      "@id": "function:implementedBy",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "usedBy": {
+      "@id": "function:usedBy",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "responsibleOrganisation": {
+      "@id": "function:responsibleOrganisation",
+      "@type": "@id"
+    },
+    "tags": "function:tags",
+    "origin": "function:origin",
+    "publisher": "function:publisher",
+    "properties": {
+      "@id": "function:properties",
+      "@container": "@set"
+    },
+    "prop_id": "function:prop_id",
+    "prop_val": "function:prop_val",
+    "prop_validity": "function:prop_validity"
+  },
+  "@id": "{{cookiecutter.ifdd_type_url}}/function/schema",
+  "@type": "rdfs:Class",
+  "rdfs:label": "function",
+  "rdfs:comment": "Function Schema",
+  "schemaVersion": "0.10.0"
+}

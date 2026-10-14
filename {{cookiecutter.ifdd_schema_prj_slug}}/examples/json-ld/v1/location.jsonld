@@ -1,0 +1,68 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "location": "{{cookiecutter.ifdd_type_url}}/location/",
+    "schema": "http://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "type": "@type",
+    "schemaVersion": "location:schemaVersion",
+    "c_created": {
+      "@id": "location:c_created",
+      "@type": "xsd:dateTime"
+    },
+    "c_modified": {
+      "@id": "location:c_modified",
+      "@type": "xsd:dateTime"
+    },
+    "c_cacheCreated": {
+      "@id": "location:c_cacheCreated",
+      "@type": "xsd:dateTime"
+    },
+    "c_cacheUpdated": {
+      "@id": "location:c_cacheUpdated",
+      "@type": "xsd:dateTime"
+    },
+    "c_validNotBefore": {
+      "@id": "location:c_validNotBefore",
+      "@type": "xsd:dateTime"
+    },
+    "c_validNotAfter": {
+      "@id": "location:c_validNotAfter",
+      "@type": "xsd:dateTime"
+    },
+    "objType": "location:objType",
+    "objScope": "location:objScope",
+    "objName": "location:objName",
+    "description": "location:description",
+    "isPartOf": {
+      "@id": "location:isPartOf",
+      "@type": "@id"
+    },
+    "hasPart": {
+      "@id": "location:hasPart",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "containsProduct": {
+      "@id": "location:containsProduct",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "tags": "location:tags",
+    "origin": "location:origin",
+    "publisher": "location:publisher",
+    "properties": {
+      "@id": "location:properties",
+      "@container": "@set"
+    },
+    "prop_id": "location:prop_id",
+    "prop_val": "location:prop_val",
+    "prop_validity": "location:prop_validity"
+  },
+  "@id": "{{cookiecutter.ifdd_type_url}}/location/schema",
+  "@type": "rdfs:Class",
+  "rdfs:label": "location",
+  "rdfs:comment": "Location Schema",
+  "schemaVersion": "0.10.0"
+}

@@ -1,0 +1,95 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "product": "{{cookiecutter.ifdd_type_url}}/product/",
+    "schema": "http://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "type": "@type",
+    "schemaVersion": "product:schemaVersion",
+    "uuid": "product:uuid",
+    "serial_number": "product:serial_number",
+    "equipment_numbers": "product:equipment_numbers",
+    "vendor": "product:vendor",
+    "manufacturer": "product:manufacturer",
+    "c_created": {
+      "@id": "product:c_created",
+      "@type": "xsd:dateTime"
+    },
+    "c_modified": {
+      "@id": "product:c_modified",
+      "@type": "xsd:dateTime"
+    },
+    "c_cacheCreated": {
+      "@id": "product:c_cacheCreated",
+      "@type": "xsd:dateTime"
+    },
+    "c_cacheUpdated": {
+      "@id": "product:c_cacheUpdated",
+      "@type": "xsd:dateTime"
+    },
+    "c_validNotBefore": {
+      "@id": "product:c_validNotBefore",
+      "@type": "xsd:dateTime"
+    },
+    "c_validNotAfter": {
+      "@id": "product:c_validNotAfter",
+      "@type": "xsd:dateTime"
+    },
+    "objType": "product:objType",
+    "objScope": "product:objScope",
+    "objName": "product:objName",
+    "description": "product:description",
+    "isPartOf": {
+      "@id": "product:isPartOf",
+      "@type": "@id"
+    },
+    "hasPart": {
+      "@id": "product:hasPart",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "providesFunction": {
+      "@id": "product:providesFunction",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "implementedBy": {
+      "@id": "product:implementedBy",
+      "@type": "@id"
+    },
+    "usesFunction": {
+      "@id": "product:usesFunction",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "usedBy": {
+      "@id": "product:usedBy",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "responsibleOrganisation": {
+      "@id": "product:responsibleOrganisation",
+      "@type": "@id"
+    },
+    "containedIn": {
+      "@id": "product:containedIn",
+      "@type": "@id"
+    },
+    "tags": "product:tags",
+    "origin": "product:origin",
+    "publisher": "product:publisher",
+    "properties": {
+      "@id": "product:properties",
+      "@container": "@set"
+    },
+    "prop_id": "product:prop_id",
+    "prop_val": "product:prop_val",
+    "prop_validity": "product:prop_validity"
+  },
+  "@id": "{{cookiecutter.ifdd_type_url}}/product/schema",
+  "@type": "rdfs:Class",
+  "rdfs:label": "product",
+  "rdfs:comment": "Product Schema",
+  "schemaVersion": "0.10.0"
+}

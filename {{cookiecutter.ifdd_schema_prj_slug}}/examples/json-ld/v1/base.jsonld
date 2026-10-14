@@ -1,0 +1,51 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "base": "{{cookiecutter.ifdd_type_url}}/base/",
+    "schema": "http://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "type": "@type",
+    "schemaVersion": "base:schemaVersion",
+    "c_created": {
+      "@id": "base:c_created",
+      "@type": "xsd:dateTime"
+    },
+    "c_modified": {
+      "@id": "base:c_modified",
+      "@type": "xsd:dateTime"
+    },
+    "c_cacheCreated": {
+      "@id": "base:c_cacheCreated",
+      "@type": "xsd:dateTime"
+    },
+    "c_cacheUpdated": {
+      "@id": "base:c_cacheUpdated",
+      "@type": "xsd:dateTime"
+    },
+    "c_validNotBefore": {
+      "@id": "base:c_validNotBefore",
+      "@type": "xsd:dateTime"
+    },
+    "c_validNotAfter": {
+      "@id": "base:c_validNotAfter",
+      "@type": "xsd:dateTime"
+    },
+    "aspect": "base:aspect",
+    "objType": "base:objType",
+    "objScope": "base:objScope",
+    "objName": "base:objName",
+    "description": "base:description",
+    "tags": "base:tags",
+    "origin": "base:origin",
+    "publisher": {
+      "@id": "base:publisher",
+      "@container": "@set"
+    }
+  },
+  "@id": "{{cookiecutter.ifdd_type_url}}/base/schema",
+  "@type": "rdfs:Class",
+  "rdfs:label": "base",
+  "rdfs:comment": "Base Schema",
+  "schemaVersion": "0.10.0"
+}

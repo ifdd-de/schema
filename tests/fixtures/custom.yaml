@@ -1,0 +1,12 @@
+# Every option away from its default.
+default_context:
+  ifdd_schema_prj_name: "Example Schema"
+  ifdd_schema_prj_slug: "example-schema"
+  ifdd_schema_host: "schema.example.org"
+  ifdd_schema_dev_port: "18081"
+  ifdd_schema_autoindex: "n"
+  ifdd_schema_cors_origin: "https://ui.example.org"
+  ifdd_schema_cache_max_age: "0"
+  ifdd_schema_memory_limit: "64M"
+  ifdd_type_url: "https://type.example.org/v1"
+  ifdd_proxy_network: "edge-net"
