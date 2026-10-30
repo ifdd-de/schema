@@ -34,7 +34,7 @@ the instance (see its README).
 | `ifdd_schema_cache_max_age` | `300` | `Cache-Control` max-age in seconds, `0` for `no-cache`; **a starting value, not measured** |
 | `ifdd_schema_memory_limit` | `128M` | memory limit of the container; **a starting value, not measured** |
 | `ifdd_type_url` | `http://type/v1` | base URL of the `type` service, used in the example schemas; no trailing slash |
-| `ifdd_nginx_image` | `nginxinc/nginx-unprivileged:1.30.5-alpine-slim` | nginx image; for a mirror, the image in the internal registry |
+| `ifdd_nginx_image` | `nginxinc/nginx-unprivileged:1.30.6-alpine-slim` | nginx image; for a mirror, the image in the internal registry |
 | `ifdd_proxy_network` | `proxy-net` | Docker network of the proxy |
 
 `ifdd_nginx_image` and `ifdd_proxy_network` carry no service prefix: they are
