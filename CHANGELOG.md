@@ -2,6 +2,12 @@
 
 The version scheme follows the other IFDD templates: `YY.MM.N`.
 
+## [26.10.3] - 2026-10-30
+
+- nginx image `nginxinc/nginx-unprivileged:1.30.6-alpine-slim` (`ifdd_nginx_image`,
+  was 1.30.5).
+- Documentation check: Sphinx 9.2.0 (`tests/docs/requirements.txt`).
+
 ## [26.10.2] - 2026-10-14
 
 - Instance test of the `c_*` terms follows the rule of ifdd-be-core: all six
