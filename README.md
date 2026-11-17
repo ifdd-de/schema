@@ -84,7 +84,8 @@ step.
 
 The pages have no `conf.py` of their own: they are meant to be copied into a
 Sphinx project that documents all services. That project needs `myst_parser`
-and `sphinxcontrib.mermaid`. Labels start with `ifdd-schema-`; references to
+and `sphinxcontrib.plantuml` (PlantUML with Java and Graphviz).
+Labels start with `ifdd-schema-`; references to
 `ifdd-instances-static` (the instance chapter of the meta repository)
 resolve only there.
 
@@ -101,6 +102,14 @@ headings per level in both languages, every label with the prefix, every
 reference to an own label resolvable, and a Sphinx build of each language
 with `-W` (configuration `tests/docs/conf.py`, versions
 `tests/docs/requirements.txt`).
+
+The check runs PlantUML, so it needs Java and Graphviz.
+`tests/docs/get_plantuml.sh` downloads the pinned PlantUML jar into the user
+cache, checks its SHA-256 and prints its path:
+
+```bash
+export IFDD_PLANTUML_JAR="$(tests/docs/get_plantuml.sh)"
+```
 
 ## CI
 
@@ -122,64 +131,8 @@ take an existing `dd4-schema` instance across. Generate a new instance, then:
 4. Stop the old container before starting the new one: both announce a
    router for the same host.
 
-## Honesty notes
+## AI assistance
 
-Documentation `docs/` (2026-10-13): rendered with cookiecutter 2.7.1 for
-both fixtures and with the `cookiecutter_all.yaml` of the meta repository;
-`tests/check_docs.py` passes for each (Sphinx 9.1.0, myst-parser 5.1.0,
-sphinxcontrib-mermaid 2.1.1, Python 3.13) and the placeholder check finds
-nothing. The instance tests fail as before this change, twice:
-`test_schema_defines_every_cache_term_in_its_own_namespace` expects the
-prefix of a context to be named like its file, which the two example domain
-contexts (prefixes `breaker`, `maintenance`) do not do; observed on the
-unchanged template too, not fixed here. The workflow file passes actionlint
-1.7.12; the workflow itself has not run. Content: taken from the previous
-instance README, this README and the configuration files; the memory limit
-and the cache lifetime are marked as not measured. Also checked
-(2026-10-13): one Sphinx project per language with the pages of all ten
-service templates (rendered with `cookiecutter_all.yaml`), the instance chapter of
-the meta repository and ifdd-be-core with its OpenAPI document builds with
-`-W` and no suppressed warnings, so every cross reference resolves; the
-Mermaid diagrams of all services, and of the option variants of the
-fixtures, render in headless Chromium 141.0.7390.37 (Playwright 1.56.0,
-Mermaid 11.12.1 served locally).
-
-See the instance README. In short: the nginx configuration was exercised
-with a real nginx binary and the compose files were validated with
-`docker compose config`; the image tag and the running read-only container
-were not (no Docker daemon at build time) and are covered by the CI smoke
-test.
-
-`examples/json-ld/v1/product.jsonld` defines `containedIn` (product -> location)
-since 2026-10-05: the energy-grid profile of `ifdd-de/ct` links every product
-to a location with it, and its integration test (`check` against these
-contexts) found the term missing. `examples` is on the cruft skip list:
-existing instances do not get the change with `cruft update`.
-
-`schemaVersion` 0.10.0 (2026-10-06): the time terms of all five example
-schemas are renamed to the cache metadata terms of `ifdd-de/be-core`:
-`c_created`, `c_modified`, `c_cacheCreated`, `c_cacheUpdated`,
-`c_validNotBefore`, `c_validNotAfter`, each with the IRI `<prefix>:c_<name>`
-of its own namespace; `expire` is gone. be-core keeps these terms out of the
-stored documents and adds them on read. The instance tests check that every
-schema defines them and none of the old names; against the 0.9.1 examples
-they fail (checked by rendering both states with cookiecutter 2.7.1). As
-with `containedIn`, existing instances and the separate content repository
-need the change by hand.
-
-Domain contexts (2026-10-12): the two example domain contexts were loaded by
-the tests of ifdd-be-core (same shape, test copies) and by its rules: name,
-`c_*` terms, namespace ending with `/`. Rendered with cookiecutter 2.7.1;
-`tests/test_config.py` parses them. Not checked: the content repository
-(it needs the new files by hand, `examples` is on the skip list).
-
-Cache-term test (2026-10-13): the test checks what `cache_namespace` of
-ifdd-be-core checks (one namespace for the six `c_*` terms, ending with `/`
-or `#`) instead of the prefix name. Rendered with cookiecutter 2.7.1 for both
-fixtures and the `cookiecutter_all.yaml`: the instance tests pass, the two
-example domain contexts included; the previous test failed for them. A
-second test feeds the check contexts with mixed namespaces, a namespace
-without `/` or `#`, and terms without `xsd:dateTime`; each is rejected. The
-namespace is expanded by the test from the prefixes of the context, not by a
-JSON-LD processor. Existing instances get the test with `cruft update`
-(`tests/` is not on the skip list).
+Some parts of this repository, in particular the tests, the test data and the
+documentation, were developed or improved with the help of large language
+models (LLMs). All changes were reviewed and released by the maintainer.
