@@ -2,6 +2,17 @@
 
 The version scheme follows the other IFDD templates: `YY.MM.N`.
 
+## [26.11.1] - 2026-11-14
+
+- Documentation: the architecture diagram in `docs/en` and `docs/de` is
+  PlantUML instead of Mermaid, so it also renders in PDF builds. The Sphinx
+  project of the full documentation needs `sphinxcontrib-plantuml`, Java and
+  Graphviz instead of `sphinxcontrib-mermaid`. `tests/docs/get_plantuml.sh`
+  downloads the pinned PlantUML jar (1.2026.10) for `tests/check_docs.py`; the
+  template CI installs Java and Graphviz.
+- READMEs: a section on the use of large language models; the READMEs no
+  longer carry test reports.
+
 ## [26.10.3] - 2026-10-30
 
 - nginx image `nginxinc/nginx-unprivileged:1.30.6-alpine-slim` (`ifdd_nginx_image`,
@@ -18,7 +29,7 @@ The version scheme follows the other IFDD templates: `YY.MM.N`.
 - Documentation of the instance in `docs/en` and `docs/de` (Sphinx sources,
   MyST Markdown): index, setup, build and release, operations, security,
   troubleshooting, reference. The instance README is now an entry point with
-  a quick start, the links, the honesty notes and the license; its former
+  a quick start, the links and the license; its former
   sections moved into the documentation.
 - `docs/_build/` in `.gitignore` of the instance.
 - Template CI: `tests/check_docs.py` checks that both languages match and

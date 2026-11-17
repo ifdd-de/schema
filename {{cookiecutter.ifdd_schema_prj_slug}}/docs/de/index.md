@@ -48,12 +48,19 @@ Beispiel-Domain-Kontexte.
 
 ## Architektur
 
-```{mermaid}
-flowchart LR
-  Clients[Browser, Dienste] -->|HTTPS| Proxy[proxy: Traefik]
-  Proxy -->|"{{ cookiecutter.ifdd_schema_host }}, Port 8080"| Nginx[schema: nginx]
-  Nginx -->|nur lesend| Content[(Inhalts-Klon)]
-  Repo[Inhalts-Repository] -->|git pull| Content
+```{uml}
+@startuml
+left to right direction
+  rectangle "Browser, Dienste" as Clients
+  rectangle "proxy: Traefik" as Proxy
+  Clients --> Proxy : HTTPS
+  rectangle "schema: nginx" as Nginx
+  Proxy --> Nginx : {{ cookiecutter.ifdd_schema_host }}, Port 8080
+  database "Inhalts-Klon" as Content
+  Nginx --> Content : nur lesend
+  rectangle "Inhalts-Repository" as Repo
+  Repo --> Content : git pull
+@enduml
 ```
 
 | Wer | Nutzt diesen Dienst für |

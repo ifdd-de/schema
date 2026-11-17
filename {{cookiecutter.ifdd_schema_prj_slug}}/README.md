@@ -31,19 +31,12 @@ The pages are Sphinx sources in MyST Markdown, meant to be copied into a
 documentation project that covers all services; GitHub shows them as plain
 Markdown.
 
-## Honesty notes
+## AI assistance
 
-The nginx configuration was loaded and exercised with a real nginx binary
-(1.24, outside Docker) while the template was built: CORS on success and
-error responses, preflight, hidden files, content types, compression, cache
-header, directory listing, health endpoint. The compose files were validated
-with `docker compose config` (v5.5.1), including the refusal to start without
-`IFDD_SCHEMA_HOST` or `IFDD_SCHEMA_CONTENT_DIR`.
-
-Not verified at build time, because no Docker daemon was available: pulling
-the image tag, the read-only root file system together with the entrypoint
-scripts of the image, and the health check in the running container.
-`tests/smoke.sh` in CI covers these.
+Some parts of the template `ifdd-de/schema` this instance was generated
+from, in particular the tests, the test data and the documentation, were
+developed or improved with the help of large language models (LLMs). All
+changes were reviewed and released by the maintainer.
 
 ## License
 
