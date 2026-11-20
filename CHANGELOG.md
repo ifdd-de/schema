@@ -2,6 +2,12 @@
 
 The version scheme follows the other IFDD templates: `YY.MM.N`.
 
+## [Unreleased]
+
+- CI: GitHub Actions pinned to commit SHAs (version as comment),
+  `persist-credentials: false` on every checkout; the same in the workflows of
+  the instance.
+
 ## [26.11.1] - 2026-11-14
 
 - Documentation: the architecture diagram in `docs/en` and `docs/de` is
