@@ -2,8 +2,11 @@
 
 The version scheme follows the other IFDD templates: `YY.MM.N`.
 
-## [Unreleased]
+## [26.11.11] - 2026-11-24
 
+- Version aligned across all ifdd-de repositories (26.11.11).
+- `ifdd_nginx_image` nginx-unprivileged 1.30.6 -> 1.30.8 (`-alpine-slim`,
+  stable branch).
 - CI: GitHub Actions pinned to commit SHAs (version as comment),
   `persist-credentials: false` on every checkout; the same in the workflows of
   the instance.
