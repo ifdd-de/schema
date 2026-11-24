@@ -5,8 +5,10 @@ The version scheme follows the other IFDD templates: `YY.MM.N`.
 ## [26.11.11] - 2026-11-24
 
 - Version aligned across all ifdd-de repositories (26.11.11).
-- `ifdd_nginx_image` nginx-unprivileged 1.30.6 -> 1.30.8 (`-alpine-slim`,
-  stable branch).
+- `ifdd_nginx_image` `nginx/nginx-unprivileged:1.30.8-alpine-slim` (was
+  `nginxinc/nginx-unprivileged:1.30.6-alpine-slim`, stable branch). The image
+  moved to the Docker Hub namespace `nginx`; `nginxinc` gets no newer releases
+  (README of nginx/docker-nginx-unprivileged).
 - CI: GitHub Actions pinned to commit SHAs (version as comment),
   `persist-credentials: false` on every checkout; the same in the workflows of
   the instance.
